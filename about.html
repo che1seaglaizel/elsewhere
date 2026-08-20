@@ -1,0 +1,363 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ABOUT — CHELSEA'S ELSEWHERE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-image: url("whitebg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    /* HEADER */
+
+    header {
+      text-align: center;
+      padding: 35px 20px 20px;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 42px;
+      letter-spacing: 2px;
+      margin: 0 0 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background: #111;
+      left: 0;
+      bottom: -6px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ABOUT */
+
+    .about-page {
+      width: 90%;
+      max-width: 1100px;
+      margin: 80px auto;
+    }
+
+    .label {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .about-page h2 {
+      text-align: center;
+      font-family: "Parisienne", cursive;
+      font-size: 75px;
+      font-weight: normal;
+      margin: 5px 0 50px;
+    }
+
+    /* PHOTO + INTRO */
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .photo {
+      position: relative;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border: 1px solid #111;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo img:hover {
+      transform: scale(1.02);
+    }
+
+    .photo::after {
+      content: "HELLO, I'M CHELSEA ✦";
+      position: absolute;
+      bottom: 25px;
+      right: -25px;
+      background: white;
+      border: 1px solid #111;
+      padding: 15px 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      transform: rotate(3deg);
+      transition: 0.4s ease;
+    }
+
+    .photo:hover::after {
+      transform: rotate(-2deg) translateY(-8px);
+    }
+
+    .intro-text {
+      padding: 20px;
+    }
+
+    .intro-text h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 38px;
+      font-weight: normal;
+      margin-top: 0;
+    }
+
+    .intro-text p {
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    /* STORY */
+
+    .story {
+      max-width: 800px;
+      margin: 120px auto;
+      text-align: center;
+      border-top: 1px solid #111;
+      border-bottom: 1px solid #111;
+      padding: 60px 30px;
+    }
+
+    .story h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 35px;
+      font-weight: normal;
+    }
+
+    .story p {
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .quote {
+      font-family: "Parisienne", cursive;
+      font-size: 38px;
+      margin-top: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #111;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav ul {
+        gap: 18px;
+      }
+
+      .about-page h2 {
+        font-size: 55px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .photo img {
+        height: 500px;
+      }
+
+      .photo::after {
+        right: 5px;
+      }
+
+      .story {
+        margin: 80px auto;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+
+    <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
+
+    <p>
+      Places to wander, moments to treasure — a little guide
+      to places worth getting lost in.
+    </p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="about-page">
+
+      <div class="label">
+        the girl behind elsewhere
+      </div>
+
+      <h2>About Me</h2>
+
+
+      <div class="intro">
+
+        <div class="photo">
+
+          <img
+            src="guide.jpg"
+            alt="Chelsea Glaizel"
+          >
+
+        </div>
+
+
+        <div class="intro-text">
+
+          <h3>Hi, I'm Chelsea.</h3>
+
+          <p>
+            I'm a girl who loves discovering beautiful places,
+            cozy spots, good food, and exciting destinations.
+          </p>
+
+          <p>
+            I created ELSEWHERE as my little collection of
+            places that caught my attention — the kind of
+            places that make you want to take pictures,
+            stay a little longer, and make memories.
+          </p>
+
+          <p>
+            Whether it's a quiet café, a beautiful view,
+            or somewhere fun to spend the day with friends,
+            I believe every place has a story waiting to be
+            discovered.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <section class="story">
+
+        <h3>Why ELSEWHERE?</h3>
+
+        <p>
+          I wanted to create a guide that feels personal,
+          simple, and inspiring. Instead of just listing
+          places, ELSEWHERE is about the experience —
+          where to wander, where to pause, and where to
+          make memories.
+        </p>
+
+        <p>
+          My recommendations are based on places I've
+          discovered, experienced, researched, or genuinely
+          believe are worth checking out. I want this guide
+          to feel like a recommendation from a friend rather
+          than a typical travel directory.
+        </p>
+
+        <div class="quote">
+          somewhere worth getting lost in.
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>✦ CHELSEA'S ELSEWHERE ✦</p>
+    <p>made with love & curiosity</p>
+
+  </footer>
+
+</body>
+</html>
+```
