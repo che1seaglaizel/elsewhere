@@ -1,0 +1,317 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CONTACT — CHELSEA'S ELSEWHERE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-image: url("whitebg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #111;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+
+    header {
+      text-align: center;
+      padding: 35px 20px 20px;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 42px;
+      letter-spacing: 2px;
+      margin: 0 0 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background: #111;
+      left: 0;
+      bottom: -6px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* CONTACT */
+
+    main {
+      flex: 1;
+    }
+
+    .contact {
+      width: 90%;
+      max-width: 900px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .contact h2 {
+      font-family: "Parisienne", cursive;
+      font-size: 85px;
+      font-weight: normal;
+      margin: 5px 0 30px;
+    }
+
+    .contact-intro {
+      max-width: 600px;
+      margin: 0 auto 60px;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* CONTACT CARD */
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #111;
+      padding: 50px;
+      max-width: 650px;
+      margin: auto;
+      transition: 0.4s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 10px 10px 0 #111;
+      background: white;
+    }
+
+    .contact-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+      margin-top: 0;
+    }
+
+    /* CONTACT LIST */
+
+    .contact-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0 0;
+    }
+
+    .contact-card li {
+      border-top: 1px solid #aaa;
+      padding: 22px 10px;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    .contact-card li:last-child {
+      border-bottom: 1px solid #aaa;
+    }
+
+    .contact-card li:hover {
+      letter-spacing: 1px;
+      background: #f5f5f5;
+    }
+
+    .contact-card a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* LITTLE MESSAGE */
+
+    .message {
+      margin-top: 60px;
+      font-family: "Parisienne", cursive;
+      font-size: 40px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #111;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav ul {
+        gap: 18px;
+      }
+
+      .contact h2 {
+        font-size: 60px;
+      }
+
+      .contact-card {
+        padding: 30px 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+
+    <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
+
+    <p>
+      Places to wander, moments to treasure — a little guide
+      to places worth getting lost in.
+    </p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="contact">
+
+      <div class="label">
+        let's keep in touch
+      </div>
+
+      <h2>Say Hello.</h2>
+
+      <p class="contact-intro">
+        Have a place you think belongs on ELSEWHERE?
+        Have a recommendation, question, or just want
+        to say hi? I'd love to hear from you.
+      </p>
+
+
+      <div class="contact-card">
+
+        <h3>Find me here ✦</h3>
+
+        <ul>
+
+          <li>
+            ✉
+            <a href="mailto:loriachelseaglaizel@email.com">
+              loriachelseaglaizel@email.com
+            </a>
+          </li>
+
+          <li>
+            ◎
+            <a href="https://www.instagram.com/szx.eyes_" target="_blank">
+              Instagram — @szx.eyes_
+            </a>
+          </li>
+
+          <li>
+            ♡
+            <span>
+              Manila, Philippines
+            </span>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="message">
+        see you somewhere ELSEWHERE.
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>✦ CHELSEA'S ELSEWHERE ✦</p>
+    <p>made with love & curiosity</p>
+
+  </footer>
+
+</body>
+</html>
+```
