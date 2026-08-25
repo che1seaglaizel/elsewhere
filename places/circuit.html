@@ -5,6 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circuit Makati</title>
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #111111;
+    }
+
+    /* NAVIGATION */
+    nav {
+        background-color: transparent;
+        padding: 25px 40px;
+        border-bottom: 1px solid #d0d0d0;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #111111;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+
+    nav a:hover {
+        color: #777777;
+    }
+
+    /* MAIN CONTENT */
+    main {
+        max-width: 1000px;
+        margin: 70px auto;
+        padding: 0 45px 70px;
+    }
+
+    /* SMALL LOCATION LABEL */
+    .location {
+        text-align: center;
+        color: #777777;
+        font-size: 13px;
+        letter-spacing: 3px;
+        margin-bottom: 25px;
+    }
+
+    /* PLACE TITLE */
+    h1 {
+        text-align: center;
+        color: #111111;
+        font-size: 52px;
+        font-weight: 500;
+        letter-spacing: -2px;
+        margin: 10px 0 35px;
+    }
+
+    h1::after {
+        content: " ✦";
+        font-size: 25px;
+        color: #777777;
+    }
+
+    /* IMAGE */
+    main > img {
+        display: block;
+        width: 100%;
+        max-width: 900px;
+        height: 500px;
+        object-fit: cover;
+        margin: 0 auto 55px;
+        border: 1px solid #222222;
+        filter: grayscale(100%);
+    }
+
+    main > img:hover {
+        filter: grayscale(0%);
+        transition: 0.5s ease;
+    }
+
+    /* HEADINGS */
+    h2 {
+        color: #111111;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-top: 45px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #222222;
+    }
+
+    /* DESCRIPTION */
+    p {
+        font-size: 16px;
+        line-height: 1.9;
+        color: #333333;
+    }
+
+    /* DETAILS TABLE */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        padding: 17px 15px;
+        text-align: left;
+        border-bottom: 1px solid #bdbdbd;
+    }
+
+    th {
+        width: 30%;
+        background-color: #222222;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    td {
+        background-color: #eeeeee;
+        color: #333333;
+        font-size: 15px;
+    }
+
+    tr:hover td {
+        background-color: #dddddd;
+    }
+
+    /* BACK BUTTON */
+    .back-button {
+        display: inline-block;
+        margin-top: 45px;
+        padding: 13px 25px;
+        background-color: #111111;
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    .back-button:hover {
+        background-color: #777777;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+        nav {
+            padding: 20px;
+        }
+
+        nav ul {
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        main {
+            margin: 40px auto;
+            padding: 0 20px 50px;
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        main > img {
+            height: 300px;
+        }
+
+        th,
+        td {
+            padding: 12px 10px;
+        }
+    }
+</style>
 
 <body>
 
