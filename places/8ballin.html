@@ -6,114 +6,199 @@
     <title>8 Balli'n Cafe</title>
 </head>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #fff7f3;
-        color: #4a3f3a;
+    * {
+        box-sizing: border-box;
     }
 
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #111111;
+    }
+
+    /* NAVIGATION */
     nav {
-        background-color: #f8c8dc;
-        padding: 15px 30px;
+        background-color: transparent;
+        padding: 25px 40px;
+        border-bottom: 1px solid #d0d0d0;
     }
 
     nav ul {
         list-style: none;
         display: flex;
-        gap: 25px;
+        justify-content: center;
+        gap: 45px;
         margin: 0;
         padding: 0;
     }
 
     nav a {
         text-decoration: none;
-        color: #5a3d4b;
-        font-weight: bold;
+        color: #111111;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        text-transform: uppercase;
     }
 
     nav a:hover {
-        color: #c05a87;
+        color: #777777;
     }
 
+    /* MAIN CONTENT */
     main {
-        max-width: 900px;
-        margin: 50px auto;
-        background-color: white;
-        padding: 35px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        max-width: 1000px;
+        margin: 70px auto;
+        padding: 0 45px 70px;
     }
 
-    h1 {
+    /* SMALL LOCATION LABEL */
+    .location {
         text-align: center;
-        color: #c05a87;
-        font-size: 40px;
+        color: #777777;
+        font-size: 13px;
+        letter-spacing: 3px;
         margin-bottom: 25px;
     }
 
+    /* PLACE TITLE */
+    h1 {
+        text-align: center;
+        color: #111111;
+        font-size: 52px;
+        font-weight: 500;
+        letter-spacing: -2px;
+        margin: 10px 0 35px;
+    }
+
     h1::after {
-        content: " ✨";
+        content: " ✦";
+        font-size: 25px;
+        color: #777777;
     }
 
-    h2 {
-        color: #c05a87;
-        margin-top: 30px;
-    }
-
+    /* IMAGE */
     main > img {
         display: block;
         width: 100%;
-        max-width: 800px;
-        height: 400px;
+        max-width: 900px;
+        height: 500px;
         object-fit: cover;
-        margin: 0 auto 25px;
-        border-radius: 18px;
+        margin: 0 auto 55px;
+        border: 1px solid #222222;
+        filter: grayscale(100%);
     }
 
+    main > img:hover {
+        filter: grayscale(0%);
+        transition: 0.5s ease;
+    }
+
+    /* HEADINGS */
+    h2 {
+        color: #111111;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-top: 45px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #222222;
+    }
+
+    /* DESCRIPTION */
     p {
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: 16px;
+        line-height: 1.9;
+        color: #333333;
     }
 
+    /* DETAILS TABLE */
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 15px;
-        overflow: hidden;
-        border-radius: 12px;
+        margin-top: 20px;
     }
 
     th,
     td {
-        padding: 15px;
+        padding: 17px 15px;
         text-align: left;
-        border-bottom: 1px solid #f0dce5;
+        border-bottom: 1px solid #bdbdbd;
     }
 
     th {
-        background-color: #f8c8dc;
-        color: #5a3d4b;
         width: 30%;
+        background-color: #222222;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
     td {
-        background-color: #fffafa;
+        background-color: #eeeeee;
+        color: #333333;
+        font-size: 15px;
     }
 
+    tr:hover td {
+        background-color: #dddddd;
+    }
+
+    /* BACK BUTTON */
     .back-button {
         display: inline-block;
-        margin-top: 30px;
-        padding: 12px 20px;
-        background-color: #c05a87;
+        margin-top: 45px;
+        padding: 13px 25px;
+        background-color: #111111;
         color: white;
         text-decoration: none;
-        border-radius: 25px;
-        font-weight: bold;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
     }
 
     .back-button:hover {
-        background-color: #a94770;
+        background-color: #777777;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+        nav {
+            padding: 20px;
+        }
+
+        nav ul {
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        main {
+            margin: 40px auto;
+            padding: 0 20px 50px;
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        main > img {
+            height: 300px;
+        }
+
+        th,
+        td {
+            padding: 12px 10px;
+        }
     }
 </style>
 <body>
