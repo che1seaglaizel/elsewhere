@@ -6,199 +6,114 @@
     <title>8 Balli'n Cafe</title>
 </head>
 <style>
-    * {
-        box-sizing: border-box;
-    }
-
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, sans-serif;
         margin: 0;
-        background-color: #f4f4f4;
-        color: #111111;
+        background-color: #fff7f3;
+        color: #4a3f3a;
     }
 
-    /* NAVIGATION */
     nav {
-        background-color: transparent;
-        padding: 25px 40px;
-        border-bottom: 1px solid #d0d0d0;
+        background-color: #636061;
+        padding: 15px 30px;
     }
 
     nav ul {
         list-style: none;
         display: flex;
-        justify-content: center;
-        gap: 45px;
+        gap: 25px;
         margin: 0;
         padding: 0;
     }
 
     nav a {
         text-decoration: none;
-        color: #111111;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 5px;
-        text-transform: uppercase;
+        color: #0a0a0a;
+        font-weight: bold;
     }
 
     nav a:hover {
-        color: #777777;
+        color: #3b3739;
     }
 
-    /* MAIN CONTENT */
     main {
-        max-width: 1000px;
-        margin: 70px auto;
-        padding: 0 45px 70px;
+        max-width: 900px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     }
 
-    /* SMALL LOCATION LABEL */
-    .location {
+    h1 {
         text-align: center;
-        color: #777777;
-        font-size: 13px;
-        letter-spacing: 3px;
+        color: #7e7b7c;
+        font-size: 40px;
         margin-bottom: 25px;
     }
 
-    /* PLACE TITLE */
-    h1 {
-        text-align: center;
-        color: #111111;
-        font-size: 52px;
-        font-weight: 500;
-        letter-spacing: -2px;
-        margin: 10px 0 35px;
-    }
-
     h1::after {
-        content: " ✦";
-        font-size: 25px;
-        color: #777777;
+        content: " ✨";
     }
 
-    /* IMAGE */
+    h2 {
+        color: #858585;
+        margin-top: 30px;
+    }
+
     main > img {
         display: block;
         width: 100%;
-        max-width: 900px;
-        height: 500px;
+        max-width: 800px;
+        height: 400px;
         object-fit: cover;
-        margin: 0 auto 55px;
-        border: 1px solid #222222;
-        filter: grayscale(100%);
+        margin: 0 auto 25px;
+        border-radius: 18px;
     }
 
-    main > img:hover {
-        filter: grayscale(0%);
-        transition: 0.5s ease;
-    }
-
-    /* HEADINGS */
-    h2 {
-        color: #111111;
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        margin-top: 45px;
-        margin-bottom: 20px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #222222;
-    }
-
-    /* DESCRIPTION */
     p {
-        font-size: 16px;
-        line-height: 1.9;
-        color: #333333;
+        font-size: 17px;
+        line-height: 1.7;
     }
 
-    /* DETAILS TABLE */
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
+        margin-top: 15px;
+        overflow: hidden;
+        border-radius: 12px;
     }
 
     th,
     td {
-        padding: 17px 15px;
+        padding: 15px;
         text-align: left;
-        border-bottom: 1px solid #bdbdbd;
+        border-bottom: 1px solid #010101;
     }
 
     th {
+        background-color: #545354;
+        color: #676365;
         width: 30%;
-        background-color: #222222;
-        color: white;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
     }
 
     td {
-        background-color: #eeeeee;
-        color: #333333;
-        font-size: 15px;
+        background-color: #ebe6e6;
     }
 
-    tr:hover td {
-        background-color: #dddddd;
-    }
-
-    /* BACK BUTTON */
     .back-button {
         display: inline-block;
-        margin-top: 45px;
-        padding: 13px 25px;
-        background-color: #111111;
+        margin-top: 30px;
+        padding: 12px 20px;
+        background-color: #181717;
         color: white;
         text-decoration: none;
-        font-size: 12px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
+        border-radius: 25px;
+        font-weight: bold;
     }
 
     .back-button:hover {
-        background-color: #777777;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-
-        nav {
-            padding: 20px;
-        }
-
-        nav ul {
-            gap: 20px;
-        }
-
-        nav a {
-            font-size: 10px;
-            letter-spacing: 3px;
-        }
-
-        main {
-            margin: 40px auto;
-            padding: 0 20px 50px;
-        }
-
-        h1 {
-            font-size: 38px;
-        }
-
-        main > img {
-            height: 300px;
-        }
-
-        th,
-        td {
-            padding: 12px 10px;
-        }
+        background-color: #c0bebf;
     }
 </style>
 <body>
