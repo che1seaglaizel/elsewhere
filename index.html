@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CONTACT — CHELSEA'S ELSEWHERE</title>
+  <title>CHELSEA'S ELSEWHERE</title>
 
   <style>
+
+    /* =========================
+       GENERAL
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -19,18 +23,17 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
       background-image: url("whitebg.jpg");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: #111;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
+      color: #111;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       text-align: center;
@@ -51,7 +54,9 @@
       line-height: 1.6;
     }
 
-    /* NAV */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       margin-top: 25px;
@@ -90,235 +95,205 @@
       width: 100%;
     }
 
-    /* MAIN */
+    /* =========================
+       ABOUT / CHELSEA SECTION
+    ========================= */
 
-    main {
-      flex: 1;
-    }
-
-    .contact {
+    .about {
       width: 90%;
       max-width: 1100px;
       margin: 80px auto;
       text-align: center;
     }
 
-    .label {
+    .about-label {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .about h2 {
+      font-family: "Parisienne", cursive;
+      font-size: 65px;
+      font-weight: normal;
+      margin: 0 0 35px;
+    }
+
+    /* PHOTO */
+
+    .about-photo {
+      position: relative;
+      width: 65%;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .about-photo::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #111;
+      top: 15px;
+      left: 15px;
+      z-index: -1;
+    }
+
+    .about-photo img {
+      display: block;
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border: 1px solid #111;
+      transition: transform 0.5s ease;
+    }
+
+    .about-photo:hover img {
+      transform: scale(1.02);
+    }
+
+    /* LITTLE FLOATING LABEL */
+
+    .photo-label {
+      position: absolute;
+      bottom: 25px;
+      left: -35px;
+      background: white;
+      border: 1px solid #111;
+      padding: 15px 25px;
+      font-family: "Parisienne", cursive;
+      font-size: 25px;
+      transform: rotate(-4deg);
+      transition: 0.4s ease;
+    }
+
+    .about-photo:hover .photo-label {
+      transform: rotate(2deg) translateY(-8px);
+    }
+
+    /* ABOUT INFORMATION UNDER PHOTO */
+
+    .about-info {
+      width: 75%;
+      max-width: 750px;
+      margin: 45px auto 0;
+      padding: 35px 45px;
+      border-top: 1px solid #111;
+      border-bottom: 1px solid #111;
+    }
+
+    .about-info h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about-info p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 12px 0;
+    }
+
+    .about-signature {
+      font-family: "Parisienne", cursive;
+      font-size: 35px;
+      margin-top: 25px;
+    }
+
+    /* =========================
+       SECTION TITLE
+    ========================= */
+
+    .places-title {
+      text-align: center;
+      margin: 120px auto 50px;
+    }
+
+    .places-title span {
       font-size: 12px;
       letter-spacing: 5px;
       text-transform: uppercase;
     }
 
-    .contact h2 {
-      font-family: "Parisienne", cursive;
-      font-size: 85px;
+    .places-title h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 55px;
       font-weight: normal;
-      margin: 5px 0 25px;
+      margin: 10px 0;
     }
 
-    .contact-intro {
-      max-width: 600px;
-      margin: 0 auto 55px;
-      font-size: 17px;
-      line-height: 1.8;
-    }
+    /* =========================
+       PLACE CARDS
+    ========================= */
 
-    /* CONTACT + FORM CONTAINER */
-
-    .contact-container {
+    .places {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      text-align: left;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 100px;
     }
 
-    /* CONTACT CARD */
-
-    .contact-card {
-      background: rgba(255, 255, 255, 0.85);
+    .places article {
+      background: rgba(255, 255, 255, 0.75);
       border: 1px solid #111;
-      padding: 45px;
-      min-height: 100%;
-      transition: 0.4s ease;
+      padding: 20px;
+      text-align: center;
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
     }
 
-    .contact-card:hover {
-      transform: translateY(-8px);
+    /* CARD HOVER */
+
+    .places article:hover {
+      transform: translateY(-12px);
       box-shadow: 10px 10px 0 #111;
       background: white;
     }
 
-    .contact-card h3 {
+    .places article h3 {
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 30px;
-      font-weight: normal;
-      margin: 0 0 10px;
+      font-size: 27px;
+      margin: 10px 0 15px;
     }
 
-    .contact-card h3::after {
-      content: "";
-      display: block;
-      width: 45px;
-      height: 2px;
-      background: #111;
-      margin-top: 12px;
-    }
-
-    .contact-card p {
-      font-size: 15px;
-      line-height: 1.7;
-      margin: 25px 0;
-    }
-
-    /* CONTACT LIST */
-
-    .contact-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 30px 0 0;
-    }
-
-    .contact-card li {
-      border-top: 1px solid #aaa;
-      padding: 22px 5px;
-      font-size: 15px;
-      transition: 0.3s ease;
-    }
-
-    .contact-card li:last-child {
-      border-bottom: 1px solid #aaa;
-    }
-
-    .contact-card li:hover {
-      letter-spacing: 1px;
-      background: #f5f5f5;
-    }
-
-    .contact-card a {
-      color: #111;
-      text-decoration: none;
-    }
-
-    .contact-card a:hover {
-      text-decoration: underline;
-    }
-
-    /* FORM CARD */
-
-    .form-card {
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid #111;
-      padding: 45px;
-      transition: 0.4s ease;
-    }
-
-    .form-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 10px 10px 0 #111;
-      background: white;
-    }
-
-    /* FIELDSET */
-
-    fieldset {
-      border: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    legend {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 30px;
-      font-weight: normal;
-      padding: 0;
-      margin-bottom: 25px;
-    }
-
-    legend::after {
-      content: "";
-      display: block;
-      width: 45px;
-      height: 2px;
-      background: #111;
-      margin-top: 12px;
-    }
-
-    /* FORM LABELS */
-
-    label {
-      display: block;
-      margin: 20px 0 8px;
+    .location {
       font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: bold;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
     }
 
-    /* FORM INPUTS */
+    .places article p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-    input,
-    select,
-    textarea {
+    /* CARD IMAGE */
+
+    .places img {
+      display: block;
       width: 100%;
-      padding: 14px;
-      border: 1px solid #999;
-      background: rgba(255, 255, 255, 0.7);
-      color: #111;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      border-radius: 0;
-      transition: 0.3s ease;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #111;
-      background: white;
-      box-shadow: 4px 4px 0 #111;
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    /* SEND BUTTON */
-
-    button {
+      height: 300px;
+      object-fit: cover;
       margin-top: 25px;
-      padding: 14px 30px;
-      border: 1px solid #111;
-      background: #111;
-      color: white;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: 0.3s ease;
+      filter: grayscale(100%);
+      transition:
+        filter 0.5s ease,
+        transform 0.5s ease;
     }
 
-    button:hover {
-      background: white;
-      color: #111;
-      box-shadow: 5px 5px 0 #111;
+    .places article:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
     }
 
-    button:focus {
-      outline: 2px solid #111;
-      outline-offset: 4px;
-    }
-
-    /* LITTLE MESSAGE */
-
-    .message {
-      margin-top: 60px;
-      font-family: "Parisienne", cursive;
-      font-size: 40px;
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       text-align: center;
@@ -328,7 +303,9 @@
       letter-spacing: 2px;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 800px) {
 
@@ -340,23 +317,35 @@
         gap: 18px;
       }
 
-      .contact {
-        margin: 60px auto;
+      .about h2 {
+        font-size: 50px;
       }
 
-      .contact h2 {
-        font-size: 60px;
+      .about-photo {
+        width: 85%;
       }
 
-      .contact-container {
+      .about-photo img {
+        height: 450px;
+      }
+
+      .photo-label {
+        left: -15px;
+      }
+
+      .about-info {
+        width: 90%;
+        padding: 25px;
+      }
+
+      .places {
         grid-template-columns: 1fr;
+        width: 85%;
       }
 
-      .contact-card,
-      .form-card {
-        padding: 30px 25px;
+      .places-title h2 {
+        font-size: 40px;
       }
-
     }
 
   </style>
@@ -365,13 +354,17 @@
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header>
 
     <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
 
     <p>
-      Places to wander, moments to treasure — a little guide
-      to places worth getting lost in.
+      Places to wander, moments to treasure — discover cute spots,
+      hidden gems, and haven-inspired places worth visiting.
     </p>
 
     <nav>
@@ -387,156 +380,162 @@
 
   <main>
 
-    <section class="contact">
+    <!-- =========================
+         ABOUT CHELSEA
+    ========================= -->
 
-      <div class="label">
-        let's keep in touch
+    <section class="about">
+
+      <div class="about-label">
+        A little introduction
       </div>
 
-      <h2>Say Hello.</h2>
-
-      <p class="contact-intro">
-        Have a place you think belongs on ELSEWHERE?
-        Have a recommendation, question, or just want
-        to say hi? I'd love to hear from you.
-      </p>
+      <h2>Chelsea Glaizel</h2>
 
 
-      <div class="contact-container">
+      <div class="about-photo">
 
-        <!-- CONTACT INFORMATION -->
+        <img
+          src="guide.jpg"
+          alt="Chelsea Glaizel"
+        >
 
-        <div class="contact-card">
+        <div class="photo-label">
+          life goes on ✦
+        </div>
 
-          <h3>Find me here ✦</h3>
+      </div>
 
-          <p>
-            Whether you have a place to recommend,
-            spotted something that needs correcting,
-            or simply want to say hello, I'd love
-            to hear from you.
+
+      <div class="about-info">
+
+        <h3>Welcome to ELSEWHERE.</h3>
+
+        <p>
+          I'm a girl who loves discovering beautiful places,
+          cozy spots, good food, and exciting destinations.
+        </p>
+
+        <p>
+          ELSEWHERE is my little collection of places worth
+          exploring — from quiet corners and cozy cafés to
+          destinations that make an ordinary day feel a little
+          more special.
+        </p>
+
+        <p>
+          Think of this as your little guide to wandering,
+          getting lost, taking pictures, and making memories
+          along the way.
+        </p>
+
+        <div class="about-signature">
+          — Chelsea
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PLACES
+    ========================= -->
+
+    <section>
+
+      <div class="places-title">
+
+        <span>my little list</span>
+
+        <h2>Places to go.</h2>
+
+      </div>
+
+
+      <div class="places">
+
+
+        <!-- PLACE 1 -->
+
+        <article>
+
+          <h3>Cruise by the Bay</h3>
+
+          <p class="location">
+            📍 SM by the Bay Amusement Park,
+            Mall of Asia Bay Area, Pasay
           </p>
 
-          <ul>
+          <p>
+            MOA Cruise by the Bay is a must-try for visitors
+            looking to enjoy Manila Bay from a different perspective.
+            Hop on a relaxing 15–30 minute boat ride for only ₱200
+            and take in beautiful coastal views, especially during sunset.
+          </p>
 
-            <li>
-              ✉ &nbsp;
-              <a href="mailto:loriachelseaglaizel@email.com">
-                loriachelseaglaizel@email.com
-              </a>
-            </li>
+          <img
+            src="images/seaside.jpg"
+            alt="Cruise by the Bay"
+          >
+          <a href="places/cruise.html">Read more ♡</a>
 
-            <li>
-              ◎ &nbsp;
-              <a href="https://www.instagram.com/szx.eyes_" target="_blank">
-                Instagram — @szx.eyes_
-              </a>
-            </li>
-
-            <li>
-              ♡ &nbsp;
-              <span>
-                Manila, Philippines
-              </span>
-            </li>
-
-          </ul>
-
-        </div>
+        </article>
 
 
-        <!-- CONTACT FORM -->
+        <!-- PLACE 2 -->
 
-        <div class="form-card">
+        <article>
 
-          <form>
+          <h3>8 Balli'n Cafe</h3>
 
-            <fieldset>
+          <p class="location">
+            📍 2231 Revillin, Santa Ana,
+            Manila, Metro Manila
+          </p>
 
-              <legend>Your details</legend>
+          <p>
+            8 Balli’n Cafe is a cozy and budget-friendly spot
+            in the neighborhood. Grab a refreshing drink,
+            challenge your friends to a game of 8-ball pool,
+            and enjoy a laid-back hangout.
+          </p>
 
+          <img
+            src="images/8ball.jpg"
+            alt="8 Balli'n Cafe"
+          >
+          <a href="places/8ballin.html">Read more ♡</a>
 
-              <label for="name">
-                Name
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-              >
-
-
-              <label for="email">
-                Email
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-              >
+        </article>
 
 
-              <label for="subject">
-                Subject
-              </label>
+        <!-- PLACE 3 -->
 
-              <select
-                id="subject"
-                name="subject"
-              >
-                <option value="suggest-place">
-                  Suggest a place
-                </option>
+        <article>
 
-                <option value="correct-detail">
-                  Correct a detail
-                </option>
+          <h3>Makati Circuit</h3>
 
-                <option value="ask-question">
-                  Ask a question
-                </option>
+          <p class="location">
+            📍 Ayala Malls Circuit,
+            Hippodromo St, Makati City
+          </p>
 
-                <option value="recommendation">
-                  Share a recommendation
-                </option>
+          <p>
+            Circuit Makati is a vibrant destination where you
+            can shop, dine, explore, and enjoy exciting
+            entertainment in one place. It's a great spot
+            to spend the day with friends or family.
+          </p>
 
-                <option value="other">
-                  Something else
-                </option>
-              </select>
+          <img
+            src="images/circuit.jpg"
+            alt="Circuit Makati"
+          >
+          <a href="places/circuit.html">Read more ♡</a>
 
+        </article>
 
-              <label for="message">
-                Message
-              </label>
-
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-              ></textarea>
-
-
-              <button type="submit">
-                Send message
-              </button>
-
-            </fieldset>
-
-          </form>
-
-        </div>
-
-      </div>
-
-
-      <div class="message">
-        see you somewhere ELSEWHERE.
       </div>
 
     </section>
@@ -544,10 +543,19 @@
   </main>
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
 
-    <p>✦ CHELSEA'S ELSEWHERE ✦</p>
-    <p>made with love & curiosity</p>
+    <p>
+      ✦ CHELSEA'S ELSEWHERE ✦
+    </p>
+
+    <p>
+      made with love & curiosity
+    </p>
 
   </footer>
 
