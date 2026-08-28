@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggest a Place</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff7f3;
+            color: #4a3f3a;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            background-color: #6e6b6c;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a3f3a;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #767173;
+        }
+
+        /* Suggestion Form */
+
+        .suggest-form {
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(74, 63, 58, 0.12);
+        }
+
+        .suggest-form h2 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .suggest-form > p {
+            text-align: center;
+            color: #6b5c55;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9b5c4;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #fffafa;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #c06c91;
+        }
+
+        fieldset {
+            border: 1px solid #d9b5c4;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 22px;
+            background-color: #fffafa;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+
+        .choice {
+            margin: 12px 0;
+        }
+
+        .choice label {
+            margin-left: 6px;
+            cursor: pointer;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #c06c91;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f8c8dc;
+            color: #4a3f3a;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e9a9c2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8c8dc;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Guide</h1>
+        <p>Discover places worth visiting!</p>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="suggest-place.html">📍 Suggest a Place</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="suggest-form">
+
+            <h2>📍 Suggest a Place</h2>
+
+            <p>
+                Know a great place that should be included in our guide?
+                Let us know!
+            </p>
+
+            <form>
+
+                <!-- Place Name -->
+                <div class="form-group">
+
+                    <label for="place-name">
+                        Place Name:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="place-name"
+                        name="place-name"
+                        placeholder="Enter the place name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+                <fieldset>
+
+                    <legend>What type of place is it?</legend>
+
+                    <div class="choice">
+
+                        <input
+                            type="radio"
+                            id="food"
+                            name="category"
+                            value="food"
+                            required
+                        >
+
+                        <label for="food">
+                            🍴 Food
+                        </label>
+
+                    </div>
+
+
+                    <div class="choice">
+
+                        <input
+                            type="radio"
+                            id="study"
+                            name="category"
+                            value="study"
+                        >
+
+                        <label for="study">
+                            📚 Study Spot
+                        </label>
+
+                    </div>
+
+
+                    <div class="choice">
+
+                        <input
+                            type="radio"
+                            id="outdoors"
+                            name="category"
+                            value="outdoors"
+                        >
+
+                        <label for="outdoors">
+                            🌳 Outdoors
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- What's Good About It -->
+                <fieldset>
+
+                    <legend>What's good about it?</legend>
+
+                    <div class="choice">
+
+                        <input
+                            type="checkbox"
+                            id="affordable"
+                            name="good-points"
+                            value="affordable"
+                        >
+
+                        <label for="affordable">
+                            💰 Affordable
+                        </label>
+
+                    </div>
+
+
+                    <div class="choice">
+
+                        <input
+                            type="checkbox"
+                            id="wifi"
+                            name="good-points"
+                            value="good-wifi"
+                        >
+
+                        <label for="wifi">
+                            📶 Good Wi-Fi
+                        </label>
+
+                    </div>
+
+
+                    <div class="choice">
+
+                        <input
+                            type="checkbox"
+                            id="quiet"
+                            name="good-points"
+                            value="quiet"
+                        >
+
+                        <label for="quiet">
+                            🤫 Quiet
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Contact Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Contact Email:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Submit -->
+                <button type="submit">
+                    📍 Submit Place Suggestion
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 My Guide. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
