@@ -7,203 +7,282 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #fff7f3;
-            color: #4a3f3a;
-        }
+             margin: 0;
+             background-image: url("../background.jpg");
+             background-size: cover;
+             background-attachment: fixed;
+             background-position: center;
+              color: #111;
+             font-family: Arial, sans-serif;
+       }
 
-        header {
+         header {
             text-align: center;
-            padding: 25px;
-            background-color: #6e6b6c;
+            padding: 55px 20px 35px;
+            background-color: #eeeeee;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 32px;
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin: 0 0 35px;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-size: 17px;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
         }
 
+        /* NAVIGATION */
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 20px 0 0;
+            margin: 25px 0 0;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 45px;
         }
 
         nav a {
             text-decoration: none;
-            color: #4a3f3a;
-            font-weight: bold;
-            font-size: 18px;
+            color: #111;
+            font-size: 14px;
+            letter-spacing: 5px;
         }
 
         nav a:hover {
-            color: #767173;
+            text-decoration: underline;
         }
 
-        /* Suggestion Form */
+        /* MAIN */
+        main {
+            max-width: 1200px;
+            margin: 70px auto;
+            padding: 0 30px;
+        }
 
+        /* FORM CONTAINER */
         .suggest-form {
-            max-width: 650px;
-            margin: 50px auto;
-            padding: 35px;
-            background-color: white;
-            border-radius: 18px;
-            box-shadow: 0 6px 20px rgba(74, 63, 58, 0.12);
+            background-color: #fff;
+            border: 1px solid #222;
+            padding: 55px;
         }
 
         .suggest-form h2 {
-            text-align: center;
-            margin-top: 0;
-            font-size: 28px;
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: normal;
+            margin: 0 0 15px;
+        }
+
+        .suggest-form h2::after {
+            content: "";
+            display: block;
+            width: 55px;
+            height: 2px;
+            background-color: #111;
+            margin-top: 18px;
         }
 
         .suggest-form > p {
-            text-align: center;
-            color: #6b5c55;
-            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 25px 0 45px;
+        }
+
+        /* FORM */
+        form {
+            max-width: 850px;
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 30px;
         }
 
-        .form-group label {
+        .form-group label,
+        legend {
             display: block;
+            font-size: 13px;
             font-weight: bold;
-            margin-bottom: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         input[type="text"],
         input[type="email"] {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #d9b5c4;
-            border-radius: 8px;
+            height: 55px;
+            padding: 12px 15px;
             box-sizing: border-box;
+            border: 1px solid #999;
+            background-color: #fff;
             font-size: 16px;
-            background-color: #fffafa;
         }
 
         input[type="text"]:focus,
         input[type="email"]:focus {
             outline: none;
-            border-color: #c06c91;
+            border: 2px solid #111;
         }
 
+        /* FIELDSETS */
         fieldset {
-            border: 1px solid #d9b5c4;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 22px;
-            background-color: #fffafa;
+            border: 1px solid #999;
+            padding: 25px;
+            margin: 0 0 30px;
         }
 
         legend {
-            font-weight: bold;
             padding: 0 10px;
-            font-size: 17px;
         }
 
         .choice {
-            margin: 12px 0;
+            margin: 18px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .choice input {
+            width: 17px;
+            height: 17px;
+            margin-right: 12px;
+            accent-color: #111;
         }
 
         .choice label {
-            margin-left: 6px;
+            font-size: 15px;
+            letter-spacing: 0;
+            text-transform: none;
+            font-weight: normal;
+            margin: 0;
             cursor: pointer;
         }
 
-        input[type="radio"],
-        input[type="checkbox"] {
-            accent-color: #c06c91;
-            cursor: pointer;
-        }
-
+        /* BUTTON */
         button {
-            width: 100%;
-            padding: 14px;
+            margin-top: 5px;
+            padding: 17px 35px;
             border: none;
-            border-radius: 10px;
-            background-color: #f8c8dc;
-            color: #4a3f3a;
-            font-size: 17px;
+            background-color: #111;
+            color: white;
+            font-size: 13px;
+            letter-spacing: 3px;
             font-weight: bold;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #e9a9c2;
+            background-color: #444;
         }
 
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #f8c8dc;
-            margin-top: 50px;
+            padding: 35px;
+            border-top: 1px solid #ccc;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            main {
+                margin: 40px auto;
+                padding: 0 15px;
+            }
+
+            .suggest-form {
+                padding: 30px 25px;
+            }
+
+            .suggest-form h2 {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1>My Guide</h1>
-        <p>Discover places worth visiting!</p>
+
+        <h1>✦ CHELSEA'S ELSEWHERE ୨ৎ˚✦</h1>
+
+        <p>
+            Places to wander, moments to treasure —
+            discover cute spots, hidden gems, and haven-inspired
+            places worth visiting.
+        </p>
 
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="suggest-place.html">📍 Suggest a Place</a></li>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../about.html">ABOUT</a></li>
+                <li><a href="../contact.html">CONTACT</a></li>
             </ul>
         </nav>
+
     </header>
 
 
+    <!-- MAIN -->
     <main>
 
         <section class="suggest-form">
 
-            <h2>📍 Suggest a Place</h2>
+            <h2>Suggest a Place ✦</h2>
 
             <p>
-                Know a great place that should be included in our guide?
-                Let us know!
+                Know a place that deserves to be featured?
+                Tell me about it and I'll consider adding it
+                to my little guide of places worth discovering.
             </p>
+
 
             <form>
 
-                <!-- Place Name -->
+                <!-- PLACE NAME -->
                 <div class="form-group">
 
                     <label for="place-name">
-                        Place Name:
+                        Place Name
                     </label>
 
                     <input
                         type="text"
                         id="place-name"
                         name="place-name"
-                        placeholder="Enter the place name"
+                        placeholder="Enter the name of the place"
                         required
                     >
 
                 </div>
 
 
-                <!-- Category -->
+                <!-- CATEGORY -->
                 <fieldset>
 
-                    <legend>What type of place is it?</legend>
+                    <legend>Category</legend>
 
                     <div class="choice">
 
@@ -216,7 +295,7 @@
                         >
 
                         <label for="food">
-                            🍴 Food
+                            Food
                         </label>
 
                     </div>
@@ -232,7 +311,7 @@
                         >
 
                         <label for="study">
-                            📚 Study Spot
+                            Study Spot
                         </label>
 
                     </div>
@@ -248,7 +327,7 @@
                         >
 
                         <label for="outdoors">
-                            🌳 Outdoors
+                            Outdoors
                         </label>
 
                     </div>
@@ -256,10 +335,10 @@
                 </fieldset>
 
 
-                <!-- What's Good About It -->
+                <!-- WHAT'S GOOD -->
                 <fieldset>
 
-                    <legend>What's good about it?</legend>
+                    <legend>What's Good About It?</legend>
 
                     <div class="choice">
 
@@ -271,7 +350,7 @@
                         >
 
                         <label for="affordable">
-                            💰 Affordable
+                            Affordable
                         </label>
 
                     </div>
@@ -287,7 +366,7 @@
                         >
 
                         <label for="wifi">
-                            📶 Good Wi-Fi
+                            Good Wi-Fi
                         </label>
 
                     </div>
@@ -303,7 +382,7 @@
                         >
 
                         <label for="quiet">
-                            🤫 Quiet
+                            Quiet
                         </label>
 
                     </div>
@@ -311,11 +390,11 @@
                 </fieldset>
 
 
-                <!-- Contact Email -->
+                <!-- EMAIL -->
                 <div class="form-group">
 
                     <label for="email">
-                        Contact Email:
+                        Contact Email
                     </label>
 
                     <input
@@ -329,9 +408,9 @@
                 </div>
 
 
-                <!-- Submit -->
+                <!-- BUTTON -->
                 <button type="submit">
-                    📍 Submit Place Suggestion
+                    SUBMIT SUGGESTION .✦ ݁˖
                 </button>
 
             </form>
@@ -342,8 +421,9 @@
 
 
     <footer>
-        <p>© 2026 My Guide. All rights reserved.</p>
+        ✦ CHELSEA'S ELSEWHERE ✦
     </footer>
 
 </body>
 </html>
+What it'll look like
