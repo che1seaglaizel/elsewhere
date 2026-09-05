@@ -1,0 +1,281 @@
+/* ========================================
+   1. VARIABLES
+   ======================================== */
+
+:root {
+    --brand-color: #111111;
+    --dark-ink: #1a1a1a;
+    --muted-gray: #777777;
+    --light-background: #f5f5f5;
+    --white: #ffffff;
+    --border-gray: #d6d6d6;
+}
+
+
+/* ========================================
+   2. BASE STYLES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-ink);
+    background-color: var(--light-background);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--brand-color);
+    text-decoration: none;
+}
+
+
+/* ========================================
+   3. LAYOUT REGIONS
+   ======================================== */
+
+header {
+    text-align: center;
+    padding: 55px 20px 30px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-gray);
+}
+
+header h1 {
+    margin: 0 0 20px;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: var(--brand-color);
+}
+
+header p {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    color: var(--muted-gray);
+}
+
+
+/* Navigation */
+
+nav {
+    margin-top: 25px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--dark-ink);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 4px;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* Main */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 70px 25px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--dark-ink);
+    color: var(--white);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   4. COMPONENTS — PLACE ENTRY CARDS
+   ======================================== */
+
+.place-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.place-card h2 {
+    margin-top: 0;
+    color: var(--brand-color);
+}
+
+.place-card p {
+    color: var(--muted-gray);
+}
+
+.place-card img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+h1,
+h2,
+h3 {
+    color: var(--dark-ink);
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button {
+    background-color: var(--brand-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* ========================================
+   4. PLACE CARDS
+   ======================================== */
+
+.place-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    border-left: 5px solid var(--brand-color);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.place-card h2 {
+    font-size: 24px;
+    color: var(--brand-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.place-card p {
+    color: var(--dark-ink);
+}
+/* ========================================
+   PLACE CARD IMAGES
+   ======================================== */
+
+.place-card img {
+    width: 90%;
+    height: 345px;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    margin: 20px auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.place-card img:hover {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+/* ========================================
+   5. CONTACT FORM
+   ======================================== */
+
+fieldset {
+    background-color: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+legend {
+    color: var(--brand-color);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    color: var(--dark-ink);
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--dark-ink);
+}
+
+/* Visible keyboard focus */
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
+    border-color: var(--brand-color);
+}
+
+
+/* Submit Button */
+
+button[type="submit"] {
+    background-color: var(--brand-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.8;
+}
