@@ -196,6 +196,7 @@ button:hover {
 
 .place-card p {
     color: var(--dark-ink);
+    flex: 1 1 240px;
 }
 /* ========================================
    PLACE CARD IMAGES
@@ -297,3 +298,9 @@ button[type="submit"]:hover {
   margin: 20px auto;
   max-width: 800px;
 }
+.place-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
