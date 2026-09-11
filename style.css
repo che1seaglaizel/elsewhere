@@ -279,3 +279,21 @@ button[type="submit"] {
 button[type="submit"]:hover {
     opacity: 0.8;
 }
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-description {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
