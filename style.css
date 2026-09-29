@@ -38,9 +38,122 @@ a {
     text-decoration: none;
 }
 
+/* ========================================
+   3. PAGE GRID LAYOUT
+   ======================================== */
+
+.page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+
+    gap: 16px;
+}
+
+header {
+    grid-area: masthead;
+}
+
+aside {
+    grid-area: side;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot;
+}
+
 
 /* ========================================
-   3. LAYOUT REGIONS
+   SIDEBAR
+   ======================================== */
+
+aside {
+    background-color: rgba(255, 255, 255, 0.90);
+
+    padding: 25px 20px;
+
+    margin: 0 0 0 15px;
+
+    border: 1px solid var(--border-gray);
+
+    border-radius: 12px;
+
+    align-self: start;
+
+    text-align: center;
+}
+
+aside h2 {
+    margin-top: 0;
+
+    font-size: 20px;
+
+    color: var(--dark-ink);
+}
+
+
+/* Sidebar links */
+
+.guide-links {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 20px 0 35px;
+}
+
+.guide-links li {
+    margin: 10px 0;
+}
+
+.guide-links a {
+    display: block;
+
+    padding: 8px;
+
+    color: var(--dark-ink);
+
+    text-decoration: none;
+
+    border-radius: 6px;
+}
+
+.guide-links a:hover {
+    background-color: var(--light-background);
+
+    text-decoration: underline;
+}
+
+
+/* Sidebar tip */
+
+.guide-tip {
+    border-top: 1px solid var(--border-gray);
+
+    padding-top: 20px;
+}
+
+.guide-tip p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: var(--muted-gray);
+}
+
+/* ========================================
+    LAYOUT REGIONS
    ======================================== */
 
 header {

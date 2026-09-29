@@ -7,7 +7,13 @@
 
   <title>ABOUT — CHELSEA'S ELSEWHERE</title>
 
+  <link rel="stylesheet" href="style.css">
+
   <style>
+
+    /* ========================================
+       BASE
+       ======================================== */
 
     * {
       box-sizing: border-box;
@@ -27,11 +33,51 @@
       font-family: Arial, sans-serif;
     }
 
-    /* HEADER */
+
+    /* ========================================
+       PAGE GRID — 7.3
+       ======================================== */
+
+    .page {
+      min-height: 100vh;
+
+      display: grid;
+
+      grid-template-columns: 220px 1fr;
+
+      grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+
+      gap: 16px;
+    }
+
+    header {
+      grid-area: masthead;
+    }
+
+    aside {
+      grid-area: side;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    footer {
+      grid-area: foot;
+    }
+
+
+    /* ========================================
+       HEADER
+       ======================================== */
 
     header {
       text-align: center;
       padding: 35px 20px 20px;
+      background: rgba(255, 255, 255, 0.85);
     }
 
     header h1 {
@@ -48,7 +94,10 @@
       line-height: 1.6;
     }
 
-    /* NAV */
+
+    /* ========================================
+       NAVIGATION — FLEXBOX
+       ======================================== */
 
     nav {
       margin-top: 25px;
@@ -58,9 +107,11 @@
       list-style: none;
       padding: 0;
       margin: 0;
+
       display: flex;
       justify-content: center;
       gap: 35px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -87,12 +138,73 @@
       width: 100%;
     }
 
-    /* ABOUT */
+
+    /* ========================================
+       SIDEBAR
+       ======================================== */
+
+    aside {
+      background: rgba(255, 255, 255, 0.90);
+      padding: 25px 20px;
+      margin-left: 15px;
+      border: 1px solid #111;
+      border-radius: 12px;
+      align-self: start;
+      text-align: center;
+    }
+
+    aside h2 {
+      margin-top: 0;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .guide-links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 35px;
+    }
+
+    .guide-links li {
+      margin: 12px 0;
+    }
+
+    .guide-links a {
+      display: block;
+      padding: 8px;
+      color: #111;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .guide-links a:hover {
+      background: #f5f5f5;
+      text-decoration: underline;
+    }
+
+    .guide-tip {
+      border-top: 1px solid #111;
+      padding-top: 20px;
+    }
+
+    .guide-tip p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+
+    /* ========================================
+       MAIN
+       ======================================== */
+
+    main {
+      padding: 40px 30px 70px;
+    }
 
     .about-page {
-      width: 90%;
+      width: 100%;
       max-width: 1100px;
-      margin: 80px auto;
+      margin: 0 auto;
     }
 
     .label {
@@ -110,7 +222,10 @@
       margin: 5px 0 50px;
     }
 
-    /* PHOTO + INTRO */
+
+    /* ========================================
+       INTRO — GRID
+       ======================================== */
 
     .intro {
       display: grid;
@@ -170,7 +285,10 @@
       line-height: 1.9;
     }
 
-    /* STORY */
+
+    /* ========================================
+       STORY
+       ======================================== */
 
     .story {
       max-width: 800px;
@@ -198,19 +316,36 @@
       margin-top: 30px;
     }
 
-    /* FOOTER */
+
+    /* ========================================
+       FOOTER
+       ======================================== */
 
     footer {
       text-align: center;
       padding: 40px 20px;
-      border-top: 1px solid #111;
+      background: #111;
+      color: white;
       font-size: 12px;
       letter-spacing: 2px;
     }
 
-    /* MOBILE */
+
+    /* ========================================
+       MOBILE
+       ======================================== */
 
     @media (max-width: 800px) {
+
+      .page {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+          "masthead"
+          "side"
+          "main"
+          "foot";
+      }
 
       header h1 {
         font-size: 30px;
@@ -218,6 +353,14 @@
 
       nav ul {
         gap: 18px;
+      }
+
+      aside {
+        margin: 0 15px;
+      }
+
+      main {
+        padding: 40px 15px;
       }
 
       .about-page h2 {
@@ -248,118 +391,187 @@
 
 <body>
 
-  <header>
+  <div class="page">
 
-    <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
 
-    <p>
-      Places to wander, moments to treasure — a little guide
-      to places worth getting lost in.
-    </p>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="places/suggest-place.html">❤︎ Suggest</a></li>
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+
+    <header>
+
+      <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
+
+      <p>
+        Places to wander, moments to treasure — a little guide
+        to places worth getting lost in.
+      </p>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="places/suggest-place.html">❤︎ Suggest</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         SIDEBAR
+         ======================================== -->
+
+    <aside>
+
+      <h2>Explore ✦</h2>
+
+      <ul class="guide-links">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About Me</a>
+        </li>
+
+        <li>
+          <a href="index.html#places">Places to Go</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+        <li>
+          <a href="places/suggest-place.html">
+            Suggest a Place
+          </a>
+        </li>
+
       </ul>
-    </nav>
-
-  </header>
 
 
-  <main>
+      <div class="guide-tip">
 
-    <section class="about-page">
+        <h2>Quick Tip ♡</h2>
 
-      <div class="label">
-        the girl behind elsewhere
-      </div>
-
-      <h2>About Me</h2>
-
-
-      <div class="intro">
-
-        <div class="photo">
-
-          <img
-            src="guide.jpg"
-            alt="Chelsea Glaizel"
-          >
-
-        </div>
-
-
-        <div class="intro-text">
-
-          <h3>Hi, I'm Chelsea.</h3>
-
-          <p>
-            I'm a girl who loves discovering beautiful places,
-            cozy spots, good food, and exciting destinations.
-          </p>
-
-          <p>
-            I created ELSEWHERE as my little collection of
-            places that caught my attention — the kind of
-            places that make you want to take pictures,
-            stay a little longer, and make memories.
-          </p>
-
-          <p>
-            Whether it's a quiet café, a beautiful view,
-            or somewhere fun to spend the day with friends,
-            I believe every place has a story waiting to be
-            discovered.
-          </p>
-
-        </div>
+        <p>
+          Take your time, explore new places,
+          and don't forget to capture the
+          little moments along the way.
+        </p>
 
       </div>
 
+    </aside>
 
-      <section class="story">
 
-        <h3>Why ELSEWHERE?</h3>
+    <!-- ========================================
+         MAIN
+         ======================================== -->
 
-        <p>
-          I wanted to create a guide that feels personal,
-          simple, and inspiring. Instead of just listing
-          places, ELSEWHERE is about the experience —
-          where to wander, where to pause, and where to
-          make memories.
-        </p>
+    <main>
 
-        <p>
-          My recommendations are based on places I've
-          discovered, experienced, researched, or genuinely
-          believe are worth checking out. I want this guide
-          to feel like a recommendation from a friend rather
-          than a typical travel directory.
-        </p>
+      <section class="about-page">
 
-        <div class="quote">
-          somewhere worth getting lost in.
+        <div class="label">
+          the girl behind elsewhere
         </div>
+
+        <h2>About Me</h2>
+
+
+        <!-- INTRO -->
+
+        <div class="intro">
+
+          <div class="photo">
+
+            <img
+              src="guide.jpg"
+              alt="Chelsea Glaizel"
+            >
+
+          </div>
+
+
+          <div class="intro-text">
+
+            <h3>Hi, I'm Chelsea.</h3>
+
+            <p>
+              I'm a girl who loves discovering beautiful places,
+              cozy spots, good food, and exciting destinations.
+            </p>
+
+            <p>
+              I created ELSEWHERE as my little collection of
+              places that caught my attention — the kind of
+              places that make you want to take pictures,
+              stay a little longer, and make memories.
+            </p>
+
+            <p>
+              Whether it's a quiet café, a beautiful view,
+              or somewhere fun to spend the day with friends,
+              I believe every place has a story waiting to be
+              discovered.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- STORY -->
+
+        <section class="story">
+
+          <h3>Why ELSEWHERE?</h3>
+
+          <p>
+            I wanted to create a guide that feels personal,
+            simple, and inspiring. Instead of just listing
+            places, ELSEWHERE is about the experience —
+            where to wander, where to pause, and where to
+            make memories.
+          </p>
+
+          <p>
+            My recommendations are based on places I've
+            discovered, experienced, researched, or genuinely
+            believe are worth checking out. I want this guide
+            to feel like a recommendation from a friend rather
+            than a typical travel directory.
+          </p>
+
+          <div class="quote">
+            somewhere worth getting lost in.
+          </div>
+
+        </section>
 
       </section>
 
-    </section>
-
-  </main>
+    </main>
 
 
-  <footer>
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
 
-    <p>✦ CHELSEA'S ELSEWHERE ✦</p>
-    <p>made with love & curiosity</p>
+    <footer>
 
-  </footer>
+      <p>✦ CHELSEA'S ELSEWHERE ✦</p>
+
+      <p>made with love & curiosity</p>
+
+    </footer>
+
+  </div>
 
 </body>
 </html>
-

@@ -2,569 +2,337 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CHELSEA'S ELSEWHERE</title>
+    <title>CHELSEA'S ELSEWHERE</title>
 
-  <style>
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background-image: url("whitebg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      font-family: Arial, sans-serif;
-      color: #111;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      text-align: center;
-      padding: 35px 20px 20px;
-    }
-
-    header h1 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 42px;
-      letter-spacing: 2px;
-      margin: 0 0 15px;
-    }
-
-    header p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    nav {
-      margin-top: 25px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 35px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #111;
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      position: relative;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 1px;
-      background: #111;
-      left: 0;
-      bottom: -6px;
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* =========================
-       ABOUT / CHELSEA SECTION
-    ========================= */
-
-    .about {
-      width: 90%;
-      max-width: 1100px;
-      margin: 80px auto;
-      text-align: center;
-    }
-
-    .about-label {
-      font-size: 12px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .about h2 {
-      font-family: "Parisienne", cursive;
-      font-size: 65px;
-      font-weight: normal;
-      margin: 0 0 35px;
-    }
-
-    /* PHOTO */
-
-    .about-photo {
-      position: relative;
-      width: 65%;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .about-photo::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 1px solid #111;
-      top: 15px;
-      left: 15px;
-      z-index: -1;
-    }
-
-    .about-photo img {
-      display: block;
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      border: 1px solid #111;
-      transition: transform 0.5s ease;
-    }
-
-    .about-photo:hover img {
-      transform: scale(1.02);
-    }
-
-    /* LITTLE FLOATING LABEL */
-
-    .photo-label {
-      position: absolute;
-      bottom: 25px;
-      left: -35px;
-      background: white;
-      border: 1px solid #111;
-      padding: 15px 25px;
-      font-family: "Parisienne", cursive;
-      font-size: 25px;
-      transform: rotate(-4deg);
-      transition: 0.4s ease;
-    }
-
-    .about-photo:hover .photo-label {
-      transform: rotate(2deg) translateY(-8px);
-    }
-
-    /* ABOUT INFORMATION UNDER PHOTO */
-
-    .about-info {
-      width: 75%;
-      max-width: 750px;
-      margin: 45px auto 0;
-      padding: 35px 45px;
-      border-top: 1px solid #111;
-      border-bottom: 1px solid #111;
-    }
-
-    .about-info h3 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .about-info p {
-      font-size: 16px;
-      line-height: 1.8;
-      margin: 12px 0;
-    }
-
-    .about-signature {
-      font-family: "Parisienne", cursive;
-      font-size: 35px;
-      margin-top: 25px;
-    }
-
-    /* =========================
-       SECTION TITLE
-    ========================= */
-
-    .places-title {
-      text-align: center;
-      margin: 120px auto 50px;
-    }
-
-    .places-title span {
-      font-size: 12px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-    }
-
-    .places-title h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 55px;
-      font-weight: normal;
-      margin: 10px 0;
-    }
-
-    /* =========================
-       PLACE CARDS
-    ========================= */
-
-    .places {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto 100px;
-    }
-
-    .places article {
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid #111;
-      padding: 20px;
-      text-align: center;
-      transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        background 0.4s ease;
-    }
-
-    /* CARD HOVER */
-
-    .places article:hover {
-      transform: translateY(-12px);
-      box-shadow: 10px 10px 0 #111;
-      background: white;
-    }
-
-    .places article h3 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 27px;
-      margin: 10px 0 15px;
-    }
-
-    .location {
-      font-size: 12px;
-      letter-spacing: 0.5px;
-      line-height: 1.5;
-    }
-
-    .places article p {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    /* CARD IMAGE */
-
-    .places img {
-      display: block;
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      margin-top: 25px;
-      filter: grayscale(100%);
-      transition:
-        filter 0.5s ease,
-        transform 0.5s ease;
-    }
-
-    .places article:hover img {
-      filter: grayscale(0%);
-      transform: scale(1.03);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #111;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      header h1 {
-        font-size: 30px;
-      }
-
-      nav ul {
-        gap: 18px;
-      }
-
-      .about h2 {
-        font-size: 50px;
-      }
-
-      .about-photo {
-        width: 85%;
-      }
-
-      .about-photo img {
-        height: 450px;
-      }
-
-      .photo-label {
-        left: -15px;
-      }
-
-      .about-info {
-        width: 90%;
-        padding: 25px;
-      }
-
-      .places {
-        grid-template-columns: 1fr;
-        width: 85%;
-      }
-
-      .places-title h2 {
-        font-size: 40px;
-      }
-    }
-
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+    <div class="page">
 
-  <header class="site-header">
+        <!-- =========================
+             HEADER
+        ========================= -->
 
-    <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
+        <header class="site-header">
 
+            <div>
+                <h1>⋆. 𐙚˚࿔ CHELSEA'S ELSEWHERE 𝜗𝜚˚⋆</h1>
 
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="places/suggest-place.html">❤︎ SUGGEST A PLACE</a></li>
-      </ul>
-    </nav>
+                <p class="site-description">
+                    Places to wander, moments to treasure — discover cute
+                    spots, hidden gems, and haven-inspired places worth visiting.
+                </p>
+            </div>
 
-  </header>
-</header>
+            <!-- NAVIGATION -->
 
-<p class="site-description">
-      Places to wander, moments to treasure — discover cute spots,
-      hidden gems, and haven-inspired places worth visiting.
-</p>
+            <nav>
+                <ul>
 
-  <main>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
 
-    <!-- =========================
-         ABOUT CHELSEA
-    ========================= -->
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
 
-    <section class="about">
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
 
-      <div class="about-label">
-        A little introduction
-      </div>
+                    <li>
+                        <a href="places/suggest-place.html">
+                            ❤︎ SUGGEST A PLACE
+                        </a>
+                    </li>
 
-      <h2>Chelsea Glaizel</h2>
+                </ul>
+            </nav>
 
-
-      <div class="about-photo">
-
-        <img
-          src="guide.jpg"
-          alt="Chelsea Glaizel"
-        >
-
-        <div class="photo-label">
-          life goes on ✦
-        </div>
-
-      </div>
+        </header>
 
 
-      <div class="about-info">
+        <!-- =========================
+             SIDEBAR
+        ========================= -->
 
-        <h3>Welcome to ELSEWHERE.</h3>
+        <aside>
 
-        <p>
-          I'm a girl who loves discovering beautiful places,
-          cozy spots, good food, and exciting destinations.
-        </p>
+            <h2>Explore</h2>
 
-        <p>
-          ELSEWHERE is my little collection of places worth
-          exploring — from quiet corners and cozy cafés to
-          destinations that make an ordinary day feel a little
-          more special.
-        </p>
+            <ul class="guide-links">
 
-        <p>
-          Think of this as your little guide to wandering,
-          getting lost, taking pictures, and making memories
-          along the way.
-        </p>
+                <li>
+                    <a href="#about">
+                        About Chelsea
+                    </a>
+                </li>
 
-        <div class="about-signature">
-          — Chelsea
-        </div>
+                <li>
+                    <a href="#places">
+                        Places to Go
+                    </a>
+                </li>
 
-      </div>
+                <li>
+                    <a href="places/cruise.html">
+                        Cruise by the Bay
+                    </a>
+                </li>
 
-    </section>
+                <li>
+                    <a href="places/8ballin.html">
+                        8 Balli'n Cafe
+                    </a>
+                </li>
 
+                <li>
+                    <a href="places/circuit.html">
+                        Makati Circuit
+                    </a>
+                </li>
 
-    <!-- =========================
-         PLACES
-    ========================= -->
-
-    <section>
-
-      <div class="places-title">
-
-        <span>my little list</span>
-
-        <h2>Places to go.</h2>
-
-      </div>
-
-    <div class="place-grid">
-      <div class="places">
+            </ul>
 
 
-        <!-- PLACE 1 -->
+            <div class="guide-tip">
 
-        <article>
+                <h2>Quick Tip ✦</h2>
 
-          <h3>Cruise by the Bay</h3>
+                <p>
+                    Take your time, explore new places, and don't forget
+                    to capture the little moments along the way.
+                </p>
 
-          <p class="location">
-            📍 SM by the Bay Amusement Park,
-            Mall of Asia Bay Area, Pasay
-          </p>
+            </div>
 
-          <p>
-            MOA Cruise by the Bay is a must-try for visitors
-            looking to enjoy Manila Bay from a different perspective.
-            Hop on a relaxing 15–30 minute boat ride for only ₱200
-            and take in beautiful coastal views, especially during sunset.
-          </p>
-
-          <img
-            src="images/seaside.jpg"
-            alt="Cruise by the Bay"
-          >
-          <a href="places/cruise.html">Read more ♡</a>
-
-        </article>
+        </aside>
 
 
-        <!-- PLACE 2 -->
+        <!-- =========================
+             MAIN
+        ========================= -->
 
-        <article>
+        <main>
 
-          <h3>8 Balli'n Cafe</h3>
+            <!-- =========================
+                 ABOUT CHELSEA
+            ========================= -->
 
-          <p class="location">
-            📍 2231 Revillin, Santa Ana,
-            Manila, Metro Manila
-          </p>
+            <section class="about" id="about">
 
-          <p>
-            8 Balli’n Cafe is a cozy and budget-friendly spot
-            in the neighborhood. Grab a refreshing drink,
-            challenge your friends to a game of 8-ball pool,
-            and enjoy a laid-back hangout.
-          </p>
+                <div class="about-label">
+                    A little introduction
+                </div>
 
-          <img
-            src="images/8ball.jpg"
-            alt="8 Balli'n Cafe"
-          >
-          <a href="places/8ballin.html">Read more ♡</a>
-
-        </article>
+                <h2>
+                    Chelsea Glaizel
+                </h2>
 
 
-        <!-- PLACE 3 -->
+                <div class="about-photo">
 
-        <article>
+                    <img
+                        src="guide.jpg"
+                        alt="Chelsea Glaizel"
+                    >
 
-          <h3>Makati Circuit</h3>
+                    <div class="photo-label">
+                        life goes on ✦
+                    </div>
 
-          <p class="location">
-            📍 Ayala Malls Circuit,
-            Hippodromo St, Makati City
-          </p>
+                </div>
 
-          <p>
-            Circuit Makati is a vibrant destination where you
-            can shop, dine, explore, and enjoy exciting
-            entertainment in one place. It's a great spot
-            to spend the day with friends or family.
-          </p>
 
-          <img
-            src="images/circuit.jpg"
-            alt="Circuit Makati"
-          >
-          <a href="places/circuit.html">Read more ♡</a>
+                <div class="about-info">
 
-        </article>
-        
-      </div>
+                    <h3>
+                        Welcome to ELSEWHERE.
+                    </h3>
+
+                    <p>
+                        I'm a girl who loves discovering beautiful places,
+                        cozy spots, good food, and exciting destinations.
+                    </p>
+
+                    <p>
+                        ELSEWHERE is my little collection of places worth
+                        exploring — from quiet corners and cozy cafés to
+                        destinations that make an ordinary day feel a little
+                        more special.
+                    </p>
+
+                    <p>
+                        Think of this as your little guide to wandering,
+                        getting lost, taking pictures, and making memories
+                        along the way.
+                    </p>
+
+                    <div class="about-signature">
+                        — Chelsea
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PLACES
+            ========================= -->
+
+            <section id="places">
+
+                <div class="places-title">
+
+                    <span>
+                        my little list
+                    </span>
+
+                    <h2>
+                        Places to go.
+                    </h2>
+
+                </div>
+
+
+                <!-- FLEXBOX PLACE CARDS -->
+
+                <div class="place-grid">
+
+                    <!-- PLACE 1 -->
+
+                    <article class="place-card">
+
+                        <h3>
+                            Cruise by the Bay
+                        </h3>
+
+                        <p class="location">
+                            📍 SM by the Bay Amusement Park,
+                            Mall of Asia Bay Area, Pasay
+                        </p>
+
+                        <p>
+                            MOA Cruise by the Bay is a must-try for visitors
+                            looking to enjoy Manila Bay from a different
+                            perspective. Hop on a relaxing 15–30 minute boat
+                            ride for only ₱200 and take in beautiful coastal
+                            views, especially during sunset.
+                        </p>
+
+                        <img
+                            src="images/seaside.jpg"
+                            alt="Cruise by the Bay"
+                        >
+
+                        <a href="places/cruise.html">
+                            Read more ♡
+                        </a>
+
+                    </article>
+
+
+                    <!-- PLACE 2 -->
+
+                    <article class="place-card">
+
+                        <h3>
+                            8 Balli'n Cafe
+                        </h3>
+
+                        <p class="location">
+                            📍 2231 Revillin, Santa Ana,
+                            Manila, Metro Manila
+                        </p>
+
+                        <p>
+                            8 Balli’n Cafe is a cozy and budget-friendly spot
+                            in the neighborhood. Grab a refreshing drink,
+                            challenge your friends to a game of 8-ball pool,
+                            and enjoy a laid-back hangout.
+                        </p>
+
+                        <img
+                            src="images/8ball.jpg"
+                            alt="8 Balli'n Cafe"
+                        >
+
+                        <a href="places/8ballin.html">
+                            Read more ♡
+                        </a>
+
+                    </article>
+
+
+                    <!-- PLACE 3 -->
+
+                    <article class="place-card">
+
+                        <h3>
+                            Makati Circuit
+                        </h3>
+
+                        <p class="location">
+                            📍 Ayala Malls Circuit,
+                            Hippodromo St, Makati City
+                        </p>
+
+                        <p>
+                            Circuit Makati is a vibrant destination where you
+                            can shop, dine, explore, and enjoy exciting
+                            entertainment in one place. It's a great spot
+                            to spend the day with friends or family.
+                        </p>
+
+                        <img
+                            src="images/circuit.jpg"
+                            alt="Circuit Makati"
+                        >
+
+                        <a href="places/circuit.html">
+                            Read more ♡
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer>
+
+            <p>
+                ✦ CHELSEA'S ELSEWHERE ✦
+            </p>
+
+            <p>
+                made with love & curiosity
+            </p>
+
+        </footer>
 
     </div>
 
-  </section>
-
-</main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <p>
-      ✦ CHELSEA'S ELSEWHERE ✦
-    </p>
-
-    <p>
-      made with love & curiosity
-    </p>
-
-  </footer>
-
 </body>
+
 </html>
