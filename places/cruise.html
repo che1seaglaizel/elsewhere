@@ -1,278 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruise By The Bay</title>
-</head>
-<style>
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        background-color: #f4f4f4;
-        color: #111111;
-    }
+    <title>Cruise By The Bay — CHELSEA'S ELSEWHERE</title>
 
-    /* NAVIGATION */
-    nav {
-        background-color: transparent;
-        padding: 25px 40px;
-        border-bottom: 1px solid #d0d0d0;
-    }
+    <link rel="stylesheet" href="../style.css">
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 45px;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
 
-    nav a {
-        text-decoration: none;
-        color: #111111;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-    }
-
-    nav a:hover {
-        color: #777777;
-    }
-
-    /* MAIN CONTENT */
-    main {
-        max-width: 1000px;
-        margin: 70px auto;
-        padding: 0 45px 70px;
-    }
-
-    /* SMALL LOCATION LABEL */
-    .location {
-        text-align: center;
-        color: #777777;
-        font-size: 13px;
-        letter-spacing: 3px;
-        margin-bottom: 25px;
-    }
-
-    /* PLACE TITLE */
-    h1 {
-        text-align: center;
-        color: #111111;
-        font-size: 52px;
-        font-weight: 500;
-        letter-spacing: -2px;
-        margin: 10px 0 35px;
-    }
-
-    h1::after {
-        content: " ✦";
-        font-size: 25px;
-        color: #777777;
-    }
-
-    /* IMAGE */
-    main > img {
-        display: block;
-        width: 100%;
-        max-width: 900px;
-        height: 500px;
-        object-fit: cover;
-        margin: 0 auto 55px;
-        border: 1px solid #222222;
-        filter: grayscale(100%);
-    }
-
-    main > img:hover {
-        filter: grayscale(0%);
-        transition: 0.5s ease;
-    }
-
-    /* HEADINGS */
-    h2 {
-        color: #111111;
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        margin-top: 45px;
-        margin-bottom: 20px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #222222;
-    }
-
-    /* DESCRIPTION */
-    p {
-        font-size: 16px;
-        line-height: 1.9;
-        color: #333333;
-    }
-
-    /* DETAILS TABLE */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
-
-    th,
-    td {
-        padding: 17px 15px;
-        text-align: left;
-        border-bottom: 1px solid #bdbdbd;
-    }
-
-    th {
-        width: 30%;
-        background-color: #222222;
-        color: white;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-
-    td {
-        background-color: #eeeeee;
-        color: #333333;
-        font-size: 15px;
-    }
-
-    tr:hover td {
-        background-color: #dddddd;
-    }
-
-    /* BACK BUTTON */
-    .back-button {
-        display: inline-block;
-        margin-top: 45px;
-        padding: 13px 25px;
-        background-color: #111111;
-        color: white;
-        text-decoration: none;
-        font-size: 12px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-    }
-
-    .back-button:hover {
-        background-color: #777777;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-
-        nav {
-            padding: 20px;
+        * {
+            box-sizing: border-box;
         }
 
-        nav ul {
-            gap: 20px;
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #111111;
         }
 
-        nav a {
-            font-size: 10px;
-            letter-spacing: 3px;
+
+        /* ========================================
+           PAGE GRID — 7.3
+           ======================================== */
+
+        .page {
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            grid-template-areas:
+                "masthead masthead"
+                "side     main"
+                "foot     foot";
+
+            gap: 16px;
+        }
+
+        header {
+            grid-area: masthead;
+        }
+
+        aside {
+            grid-area: side;
         }
 
         main {
-            margin: 40px auto;
-            padding: 0 20px 50px;
+            grid-area: main;
         }
+
+        footer {
+            grid-area: foot;
+        }
+
+
+        /* ========================================
+           HEADER / NAVIGATION
+           ======================================== */
+
+        header {
+            background-color: transparent;
+            padding: 25px 40px;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111111;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #777777;
+        }
+
+
+        /* ========================================
+           SIDEBAR
+           ======================================== */
+
+        aside {
+            background-color: #ffffff;
+            padding: 25px 20px;
+            margin-left: 15px;
+            border: 1px solid #d0d0d0;
+            border-radius: 12px;
+            align-self: start;
+            text-align: center;
+        }
+
+        aside h2 {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-top: 0;
+            border: none;
+        }
+
+        .guide-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 35px;
+        }
+
+        .guide-links li {
+            margin: 12px 0;
+        }
+
+        .guide-links a {
+            display: block;
+            padding: 8px;
+            color: #111111;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .guide-links a:hover {
+            background-color: #eeeeee;
+        }
+
+        .guide-tip {
+            border-top: 1px solid #111111;
+            padding-top: 20px;
+        }
+
+        .guide-tip p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #777777;
+        }
+
+
+        /* ========================================
+           MAIN CONTENT
+           ======================================== */
+
+        main {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 70px 45px;
+        }
+
+
+        /* ========================================
+           PLACE TITLE
+           ======================================== */
 
         h1 {
-            font-size: 38px;
+            text-align: center;
+            color: #111111;
+            font-size: 52px;
+            font-weight: 500;
+            letter-spacing: -2px;
+            margin: 10px 0 35px;
         }
 
-        main > img {
-            height: 300px;
+        h1::after {
+            content: " ✦";
+            font-size: 25px;
+            color: #777777;
+        }
+
+
+        /* ========================================
+           PLACE CARD
+           ======================================== */
+
+        .place-card {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        /* ========================================
+           IMAGE
+           ======================================== */
+
+        main > .place-card img {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            object-fit: cover;
+            margin: 0 auto 55px;
+            border: 1px solid #222222;
+            filter: grayscale(100%);
+            transition: 0.5s ease;
+        }
+
+        main > .place-card img:hover {
+            filter: grayscale(0%);
+        }
+
+
+        /* ========================================
+           HEADINGS
+           ======================================== */
+
+        h2 {
+            color: #111111;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #222222;
+        }
+
+
+        /* ========================================
+           DESCRIPTION
+           ======================================== */
+
+        p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #333333;
+        }
+
+
+        /* ========================================
+           DETAILS TABLE
+           ======================================== */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
         th,
         td {
-            padding: 12px 10px;
+            padding: 17px 15px;
+            text-align: left;
+            border-bottom: 1px solid #bdbdbd;
         }
-    }
-</style>
-<body>
-<head>
-    <link rel="stylesheet" href="../style.css">
+
+        th {
+            width: 30%;
+            background-color: #222222;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        td {
+            background-color: #eeeeee;
+            color: #333333;
+            font-size: 15px;
+        }
+
+        tr:hover td {
+            background-color: #dddddd;
+        }
+
+
+        /* ========================================
+           BACK BUTTON
+           ======================================== */
+
+        .back-button {
+            display: inline-block;
+            margin-top: 45px;
+            padding: 13px 25px;
+            background-color: #111111;
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #777777;
+        }
+
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #111111;
+            color: white;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        footer p {
+            color: white;
+        }
+
+
+        /* ========================================
+           MOBILE
+           ======================================== */
+
+        @media (max-width: 800px) {
+
+            .page {
+                grid-template-columns: 1fr;
+
+                grid-template-areas:
+                    "masthead"
+                    "side"
+                    "main"
+                    "foot";
+            }
+
+            aside {
+                margin: 0 15px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            main {
+                margin: 0 auto;
+                padding: 40px 20px 50px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            main > .place-card img {
+                height: 300px;
+            }
+
+            th,
+            td {
+                padding: 12px 10px;
+            }
+        }
+
+    </style>
 </head>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="suggest-place.html">❤︎ Suggest</a></li>
-        </ul>
-    </nav>
 
-    <main>
-        <article class="place-card">
-        <h1>Cruise By The Bay</h1>
 
-        <img
-            src="../images/seaside.jpg"
-            alt="Cruise By The Bay"
-            width="800"
-        >
-        </article>
+<body>
 
-        <h2>About Cruise By The Bay</h2>
+    <div class="page">
 
-        <p>
-           MOA Cruise by the Bay is a relaxing way to experience
-            Manila Bay from a different perspective. Visitors can
-            enjoy a 15–30 minute boat ride while taking in beautiful
-            coastal views of the bay. It is especially recommended
-            during sunset, when the scenery becomes more beautiful
-            and the experience is more enjoyable.
-        </p>
-         <p>
-            This is a great activity for visitors who want to take
-            a short break from exploring the Mall of Asia area and
-            enjoy the fresh air and views along Manila Bay. With an
-            affordable ticket price of around ₱200, it is also a
-            budget-friendly activity to add to your trip.
-        </p>
 
-        <h2>Place Details</h2>
+        <!-- HEADER -->
 
-        <table border="1">
-            <tr>
-                <th>Address</th>
-                <td>SM by the Bay Amusement Park, Mall of Asia Bay Area, Pasay</td>
-            </tr>
+        <header>
 
-            <tr>
-                <th>Activity</th>
-                <td>15–30 minute boat cruise</td>
-            </tr>
+            <nav>
+                <ul>
 
-            <tr>
-                <th>Opening Hours</th>
-                <td>3:00 PM - 10:00 PM</td>
-            </tr>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
 
-            <tr>
-                <th>Price Range</th>
-                <td>₱200</td>
-            </tr>
+                    <li>
+                        <a href="../about.html">About</a>
+                    </li>
 
-            <tr>
-                <th>Best Time to Visit</th>
-                <td>Late afternoon / Sunset</td>
-            </tr>
-        </table>
+                    <li>
+                        <a href="../contact.html">Contact</a>
+                    </li>
 
-    </main>
+                    <li>
+                        <a href="suggest-place.html">❤︎ Suggest</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </header>
+
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+            <h2>Explore ✦</h2>
+
+            <ul class="guide-links">
+
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../about.html">
+                        About Me
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#places">
+                        Places to Go
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="suggest-place.html">
+                        Suggest a Place
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="guide-tip">
+
+                <h2>Quick Tip ♡</h2>
+
+                <p>
+                    Visit during the late afternoon
+                    and enjoy the bay views around sunset.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main>
+
+            <article class="place-card">
+
+                <h1>Cruise By The Bay</h1>
+
+                <img
+                    src="../images/seaside.jpg"
+                    alt="Cruise By The Bay"
+                >
+
+            </article>
+
+
+            <h2>About Cruise By The Bay</h2>
+
+            <p>
+                MOA Cruise by the Bay is a relaxing way to experience
+                Manila Bay from a different perspective. Visitors can
+                enjoy a 15–30 minute boat ride while taking in beautiful
+                coastal views of the bay. It is especially recommended
+                during sunset, when the scenery becomes more beautiful
+                and the experience is more enjoyable.
+            </p>
+
+            <p>
+                This is a great activity for visitors who want to take
+                a short break from exploring the Mall of Asia area and
+                enjoy the fresh air and views along Manila Bay. With an
+                affordable ticket price of around ₱200, it is also a
+                budget-friendly activity to add to your trip.
+            </p>
+
+
+            <h2>Place Details</h2>
+
+            <table>
+
+                <tr>
+                    <th>Address</th>
+
+                    <td>
+                        SM by the Bay Amusement Park,
+                        Mall of Asia Bay Area, Pasay
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Activity</th>
+
+                    <td>
+                        15–30 minute boat cruise
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Opening Hours</th>
+
+                    <td>
+                        3:00 PM - 10:00 PM
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Price Range</th>
+
+                    <td>
+                        ₱200
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Best Time to Visit</th>
+
+                    <td>
+                        Late afternoon / Sunset
+                    </td>
+                </tr>
+
+            </table>
+
+
+            <a
+                href="../index.html#places"
+                class="back-button"
+            >
+                ← Back to Places
+            </a>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>✦ CHELSEA'S ELSEWHERE ✦</p>
+
+            <p>made with love & curiosity</p>
+
+        </footer>
+
+
+    </div>
 
 </body>
+
 </html>
