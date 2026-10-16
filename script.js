@@ -1,27 +1,41 @@
+
 const guideName = "CHELSEA'S ELSEWHERE";
-const currentYear = new Date().getFullYear(); // or 2026
+const currentYear = new Date().getFullYear();
 
+let runningCount = 0;
 
-let totalPlacesCount = 0;
+// Display the guide name
+const guideHeading = document.getElementById("guide-name");
 
+if (guideHeading) {
+    guideHeading.textContent = `⋆. 𐙚˚࿔ ${guideName} 𝜗𝜚˚⋆`;
+}
 
+// Count the places on the page
 const placeCards = document.querySelectorAll(".place-card");
-totalPlacesCount = placeCards.length;
 
+placeCards.forEach(function () {
+    runningCount++;
+});
 
-const headerTitle = document.getElementById("guide-title");
-if (headerTitle) {
-  headerTitle.textContent = guideName;
+// Display the computed place count
+const placeCountDisplay = document.getElementById("place-count");
+
+if (placeCountDisplay) {
+    placeCountDisplay.textContent = `✦ Places to explore: ${runningCount}`;
 }
 
+// Update the footer guide name
+const footerName = document.getElementById("footer-guide-name");
 
-const countDisplay = document.getElementById("places-count");
-if (countDisplay) {
-  countDisplay.textContent = `${totalPlacesCount} cute spots featured`;
+if (footerName) {
+    footerName.textContent = `✦ ${guideName} ✦`;
 }
 
+// Update the copyright year
+const copyright = document.getElementById("copyright");
 
-const copyrightElement = document.getElementById("footer-copyright");
-if (copyrightElement) {
-  copyrightElement.textContent = `© ${currentYear} ${guideName}`;
+if (copyright) {
+    copyright.textContent = `© ${currentYear} ${guideName}`;
 }
+
