@@ -25,8 +25,3 @@ const copyrightElement = document.getElementById("footer-copyright");
 if (copyrightElement) {
   copyrightElement.textContent = `© ${currentYear} ${guideName}`;
 }
-
-
-console.log("guide name:", guideName);
-console.log("current year:", currentYear);
-console.log("places reviewed count:", totalPlacesCount);
