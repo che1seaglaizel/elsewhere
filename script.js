@@ -39,3 +39,14 @@ if (copyright) {
     copyright.textContent = `© ${currentYear} ${guideName}`;
 }
 
+const isWithinWalkingDistance = true;
+
+const distanceMessage = isWithinWalkingDistance
+    ? "Walking distance"
+    : "Better to commute";
+
+const distanceDisplay = document.getElementById("distance-result");
+
+if (distanceDisplay) {
+    distanceDisplay.textContent = distanceMessage;
+}
